@@ -6,7 +6,9 @@ import Footer from "./components/Footer/Footer";
 
 import styles from './App.module.css';
 import MediaQuery from "react-responsive";
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import LockOnToMenu from "./components/LockOnToMenu/LockOnToMenu";
+import Home from "./components/Pages/Home";
 
 class App extends Component {
 
@@ -20,21 +22,26 @@ class App extends Component {
   render() {
     const { displayMenu } = this.state;
     return (
-      <div className="App">
-        <div className={styles.bodyContainer}>
-          <Header
-            displayMenu={displayMenu}
-            toggleMenu={this.handleMenu}
-          />
-          <MediaQuery maxWidth={767}>
-            <LockOnToMenu className={styles.backgroundShadow} enabled={displayMenu} />
-          </MediaQuery>
-          <div className={styles.body}>
-            TESTING
+      <BrowserRouter>
+        <div className="App">
+          <div className={styles.bodyContainer}>
+            <Header
+              displayMenu={displayMenu}
+              toggleMenu={this.handleMenu}
+            />
+            <MediaQuery maxWidth={767}>
+              <LockOnToMenu className={styles.backgroundShadow} enabled={displayMenu} />
+            </MediaQuery>
+            <div className={styles.body}>
+              <Switch>
+                <Route exact path="/" component={Home} />
+                {/*<Route exact path="/" component={Home} />*/}
+              </Switch>
+            </div>
+            <Footer/>
           </div>
-          <Footer/>
         </div>
-      </div>
+      </BrowserRouter>
     );
   }
 }
