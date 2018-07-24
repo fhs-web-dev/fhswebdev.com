@@ -3,7 +3,16 @@ import logo from './logo.svg';
 import './App.css';
 
 class App extends Component {
+
+  state = {
+    displayMenu: false
+  };
+
+  handleMenu = () =>
+    this.setState(prevState => ({ displayMenu: !prevState.displayMenu }));
+
   render() {
+    const { displayMenu } = this.state;
     return (
       <div className="App">
         <header className="App-header">
