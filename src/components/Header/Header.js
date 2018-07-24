@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import PropTypes from 'prop-types';
 import { TransitionGroup } from 'react-transition-group';
 import Velocity from 'velocity-animate';
 import Sticky from 'react-sticky-el';
@@ -44,17 +45,15 @@ class Accordion extends Component {
 
 export default class Header extends Component {
 
-  state = {
-    displayMenu: false
-  };
-
-  toggleMenu = () => {
-    this.setState(prevState => ({ displayMenu: !prevState.displayMenu }))
+  static propTypes = {
+    displayMenu: PropTypes.bool.isRequired,
+    toggleMenu: PropTypes.func.isRequired
   };
 
   render() {
+    const { displayMenu, toggleMenu } = this.props;
     return (
-      <Sticky>
+      <Sticky className={styles.sticky}>
         <header className={styles.header}>
           <div className={`container ${styles.container}`}>
             <div className={styles.titleMenu}>
@@ -62,8 +61,8 @@ export default class Header extends Component {
               <MediaQuery maxWidth={767}>
                 <HamburgerMenu
                   className={styles.hamburger}
-                  enabled={this.state.displayMenu}
-                  onToggle={this.toggleMenu}
+                  enabled={displayMenu}
+                  onToggle={toggleMenu}
                 />
               </MediaQuery>
             </div>
@@ -81,7 +80,7 @@ export default class Header extends Component {
                 );
                 if (matches) {
                   return (
-                    <DropMenu open={this.state.displayMenu}>
+                    <DropMenu open={displayMenu}>
                       {menu}
                     </DropMenu>
                   )
