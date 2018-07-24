@@ -1,6 +1,12 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
+// Components
+import Header from "./components/Header/Header";
+import Footer from "./components/Footer/Footer";
+
+import styles from './App.module.css';
+import MediaQuery from "react-responsive";
+import LockOnToMenu from "./components/LockOnToMenu/LockOnToMenu";
 
 class App extends Component {
 
@@ -15,13 +21,19 @@ class App extends Component {
     const { displayMenu } = this.state;
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+        <div className={styles.bodyContainer}>
+          <Header
+            displayMenu={displayMenu}
+            toggleMenu={this.handleMenu}
+          />
+          <MediaQuery maxWidth={767}>
+            <LockOnToMenu className={styles.backgroundShadow} enabled={displayMenu} />
+          </MediaQuery>
+          <div className={styles.body}>
+            TESTING
+          </div>
+          <Footer/>
+        </div>
       </div>
     );
   }

@@ -1,0 +1,19 @@
+.bodyContainer {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.body {
+  flex-grow: 1;
+}
+
+.backgroundShadow {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -100;
+  background-color: rgba(58, 58, 58, .35);
+}
