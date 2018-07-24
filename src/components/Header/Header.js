@@ -7,6 +7,7 @@ import MediaQuery from 'react-responsive';
 
 import styles from './Header.module.css';
 import HamburgerMenu from "../HamburgerMenu/HamburgerMenu";
+import { Link, NavLink } from "react-router-dom";
 
 
 class DropMenu extends Component {
@@ -57,7 +58,7 @@ export default class Header extends Component {
         <header className={styles.header}>
           <div className={`container ${styles.container}`}>
             <div className={styles.titleMenu}>
-              <h1 className={styles.title}>FHS Web Dev Club</h1>
+              <Link to="/"><h1 className={styles.title}>FHS Web Dev Club</h1></Link>
               <MediaQuery maxWidth={767}>
                 <HamburgerMenu
                   className={styles.hamburger}
@@ -71,10 +72,10 @@ export default class Header extends Component {
                 const menu = (
                   <div className={styles.menu}>
                     <ul className={styles.menuItems}>
-                      <li>About</li>
-                      <li>Joining</li>
-                      <li>Projects</li>
-                      <li>Contact</li>
+                      <li><NavLink to="/about">About</NavLink></li>
+                      <li><NavLink to="/joining">Joining</NavLink></li>
+                      <li><NavLink to="/projects">Projects</NavLink></li>
+                      <li><NavLink to="/contact">Contact</NavLink></li>
                     </ul>
                   </div>
                 );
