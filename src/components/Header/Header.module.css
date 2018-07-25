@@ -27,7 +27,9 @@
   align-items: center;
 }
 
-.titleMenu .title { grid-column-start: 2; }
+.titleMenu .titleLink {
+  grid-column-start: 2;
+}
 
 .hamburger {
   margin-left: auto;

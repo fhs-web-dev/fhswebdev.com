@@ -58,7 +58,7 @@ export default class Header extends Component {
         <header className={styles.header}>
           <div className={`container ${styles.container}`}>
             <div className={styles.titleMenu}>
-              <Link to="/"><h1 className={styles.title}>FHS Web Dev Club</h1></Link>
+              <Link to="/" className={styles.titleLink}><h1 className={styles.title}>FHS Web Dev Club</h1></Link>
               <MediaQuery maxWidth={767}>
                 <HamburgerMenu
                   className={styles.hamburger}
