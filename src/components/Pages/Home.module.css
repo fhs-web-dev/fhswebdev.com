@@ -29,8 +29,10 @@
 }
 
 .container {
-  min-height: 100vh;
-  padding: 0 1em;
+  /* min-height: 100vh; */
+  padding-left: 1em;
+  padding-right: 1em;
+  padding-bottom: 2.25em;
 }
 
 .body {
