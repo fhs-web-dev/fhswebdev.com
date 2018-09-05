@@ -1,0 +1,29 @@
+.body {
+  display: flex;
+  flex-direction: column;
+  font-size: 1.3rem;
+  text-align: center;
+  border: #000 1px solid;
+  color: #fff;
+  margin: 1em;
+  border-radius: 15px;
+  overflow: hidden;
+  height: 15em;
+  background-position: center;
+  background-size: cover;
+}
+
+.body div {
+  background-color: rgba(0, 0, 0, .6);
+  padding: .25em 0;
+  margin-top: auto;
+}
+
+@media (min-width: 767px) {
+  .body {
+    flex-grow: 1;
+    max-width: 250px;
+    flex-direction: column;
+    margin: 0 2em;
+  }
+}
