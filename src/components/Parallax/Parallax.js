@@ -9,14 +9,16 @@ export default class Parallax extends Component {
     height: PropTypes.string,
     backgroundColor: PropTypes.string,
     responsiveness: PropTypes.number,
-    mainContainerClassName: PropTypes.string
+    mainContainerClassName: PropTypes.string,
+    enabled: PropTypes.bool
   };
 
   static defaultProps = {
     height: '100vh',
     backgroundColor: '#fff',
     responsiveness: 1,
-    mainContainerClassName: ''
+    mainContainerClassName: '',
+    enabled: true
   };
 
   copyInNewStyles = (element, style) =>
@@ -33,6 +35,7 @@ export default class Parallax extends Component {
       backgroundColor,
       responsiveness,
       parallaxContent,
+      enabled,
       children
     } = this.props;
 
@@ -40,20 +43,34 @@ export default class Parallax extends Component {
       throw new Error('Parallax content and children must be a single node element!');
     }
 
-    const mainContainerStyles = {
-      perspective: '1px',
-      transformStyle: 'preserve-3d',
-      height,
-      overflowX: 'hidden',
-      overflowY: 'scroll'
-    };
-
-    const parallaxContainerStyles = {
-      position: 'relative',
-      transform: `translateZ(-${responsiveness}px) scale(${responsiveness + 1})`,
-      zIndex: '-1',
+    const nonParallaxMainContainerStyles = {
       height
-    };
+    }
+
+    const mainContainerStyles = enabled ?
+      {
+        ...nonParallaxMainContainerStyles,
+        perspective: '1px',
+        transformStyle: 'preserve-3d',
+        overflowX: 'hidden',
+        overflowY: 'scroll'
+      }
+      :
+      nonParallaxMainContainerStyles;
+
+    const nonParallaxContainerStyles = {
+      zIndex: '-1',
+      position: 'relative',
+      height
+    }
+
+    const parallaxContainerStyles = enabled ? 
+      {
+        ...nonParallaxContainerStyles,
+        transform: `translateZ(-${responsiveness}px) scale(${responsiveness + 1})`
+      }
+      :
+      nonParallaxContainerStyles;
 
     const parallax = this.copyInNewStyles(parallaxContent, parallaxContainerStyles);
 
