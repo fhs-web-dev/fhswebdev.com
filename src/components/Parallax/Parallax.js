@@ -44,16 +44,16 @@ export default class Parallax extends Component {
     }
 
     const nonParallaxMainContainerStyles = {
-      height
+      height,
+      overflowX: 'hidden',
+      overflowY: 'scroll'
     }
 
     const mainContainerStyles = enabled ?
       {
         ...nonParallaxMainContainerStyles,
         perspective: '1px',
-        transformStyle: 'preserve-3d',
-        overflowX: 'hidden',
-        overflowY: 'scroll'
+        transformStyle: 'preserve-3d'
       }
       :
       nonParallaxMainContainerStyles;
