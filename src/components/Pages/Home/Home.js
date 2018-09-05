@@ -1,7 +1,7 @@
 import React from "react";
 
 import styles from './Home.module.css';
-import Parallax from "../Parallax/Parallax";
+import Parallax from "../../Parallax/Parallax";
 // import Header from "../Header/Header";
 
 export default () => (
@@ -38,7 +38,6 @@ export default () => (
             >
               Here is the link to the slides!
             </a>
-          <div>
             {/* TODO: OUR SITES */}
             {/* <div>El</div> */}
           </div>

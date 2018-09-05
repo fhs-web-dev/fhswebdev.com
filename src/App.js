@@ -8,7 +8,8 @@ import styles from './App.module.css';
 import MediaQuery from "react-responsive";
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import LockOnToMenu from "./components/LockOnToMenu/LockOnToMenu";
-import Home from "./components/Pages/Home";
+import Home from "./components/Pages/Home/Home";
+// import RegularPages from './components/Pages/RegularPages/RegularPages';
 // import RegularPages from './components/Pages/RegularPages/RegularPages';
 
 class App extends Component {
