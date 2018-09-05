@@ -2,9 +2,10 @@ import React from "react";
 
 import styles from './Home.module.css';
 import Parallax from "../../Parallax/Parallax";
+import Gallery from "./Gallery";
 // import Header from "../Header/Header";
 
-export default () => (
+export default props => (
   <Parallax
     type="div"
     parallaxContent={(
@@ -31,16 +32,14 @@ export default () => (
             Topics include basic HTML / CSS, Javascript and backend languages, color theory, and web frameworks. 
             By the end of the academic year, committed members will have built their own personal portfolio website. 
           </p>
-            <a 
-              href="https://drive.google.com/drive/folders/1KCFQsQ_Ci_vphDuEorODH4D4xaRswkHZ?usp=sharing"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Here is the link to the slides!
-            </a>
-            {/* TODO: OUR SITES */}
-            {/* <div>El</div> */}
-          </div>
+          <a 
+            href="https://drive.google.com/drive/folders/1KCFQsQ_Ci_vphDuEorODH4D4xaRswkHZ?usp=sharing"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Here is the link to the slides!
+          </a>
+          <Gallery people={props.people} />
         </div>
       </div>
     </div>

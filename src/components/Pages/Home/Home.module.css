@@ -41,16 +41,6 @@
   text-align: left;
 }
 
-.gallery, .gallery > div {
-  display: flex;
-  flex-direction: column;
-  text-align: center;
-}
-
-.gallery > div {
-  flex-grow: 1;
-}
-
 @media (min-width: 767px) {
   .title {
     font-size: 3.25em;
@@ -69,28 +59,5 @@
   .body {
     margin: 0 auto;
     width: 90%;
-  }
-
-  .gallery, .gallery > div {
-    flex-direction: row;
-  }
-
-  .gallery {
-    justify-content: center;
-    height: 250px;
-  }
-
-  .gallery > div {
-    max-width: 250px;
-    border: #000 1px solid;
-    margin: 0 2em;
-    border-radius: 15px;
-  }
-
-  .gallery > div a {
-    padding-bottom: .5em;
-    margin-top: auto;
-    margin-left: auto;
-    margin-right: auto;
   }
 }
