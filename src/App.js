@@ -1,14 +1,15 @@
 import React, { Component } from 'react';
 import './App.css';
 // Components
-import Header from "./components/Header/Header";
-import Footer from "./components/Footer/Footer";
+// import Header from "./components/Header/Header";
+// import Footer from "./components/Footer/Footer";
 
 import styles from './App.module.css';
 import MediaQuery from "react-responsive";
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import LockOnToMenu from "./components/LockOnToMenu/LockOnToMenu";
 import Home from "./components/Pages/Home";
+// import RegularPages from './components/Pages/RegularPages/RegularPages';
 
 class App extends Component {
 
@@ -25,20 +26,11 @@ class App extends Component {
       <BrowserRouter>
         <div className="App">
           <div className={styles.bodyContainer}>
-            <Header
-              displayMenu={displayMenu}
-              toggleMenu={this.handleMenu}
-            />
-            <MediaQuery maxWidth={767}>
-              <LockOnToMenu className={styles.backgroundShadow} enabled={displayMenu} />
-            </MediaQuery>
-            <div className={styles.body}>
-              <Switch>
-                <Route exact path="/" component={Home} />
-                {/*<Route exact path="/" component={Home} />*/}
-              </Switch>
-            </div>
-            <Footer/>
+            <Switch>
+              <Route component={Home} />
+              {/* <Route exact path="/" component={Home} /> */}
+              {/* <RegularPages displayMenu={displayMenu} toggleMenu={this.handleMenu} /> */}
+            </Switch>
           </div>
         </div>
       </BrowserRouter>
