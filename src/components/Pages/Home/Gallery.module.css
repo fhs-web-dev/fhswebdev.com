@@ -1,0 +1,17 @@
+.gallery {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  margin-top: 2em;
+}
+
+@media (min-width: 767px) {
+  .gallery {
+    flex-direction: row;
+  }
+
+  .gallery {
+    align-items: center;
+    justify-content: center;
+  }
+}
