@@ -48,7 +48,7 @@ export default class extends Component {
               <h1 className={styles.title}>Web Development Club</h1>
               <h2>Fairview High School</h2>
               <ul className={styles.meetingList}>
-                <li>Room#228</li>
+                <li>Room#225</li>
                 <li>Wednesday Block Lunch</li>
               </ul>
             </div>
