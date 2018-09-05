@@ -34,6 +34,7 @@ export default () => (
             <a 
               href="https://drive.google.com/drive/folders/1KCFQsQ_Ci_vphDuEorODH4D4xaRswkHZ?usp=sharing"
               target="_blank"
+              rel="noopener noreferrer"
             >
               Here is the link to the slides!
             </a>
